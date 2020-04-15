@@ -1,44 +1,45 @@
 "use strict";
-(function () {
-  const cardsRow = document.querySelector(".cards");
-  const cards = document.querySelectorAll(".card");
-  console.log(cardsRow);
-  console.log(cards.length);
-  console.log(cardsRow.dataset.start);
-  const start = parseInt(cardsRow.dataset.start);
-  init(start);
-  function init(start) {
-    for (let i = 0; i < start; i++) {
-      const card = cards[i];
-      card.classList.add("hide-at-left");
-    }
-  }
-  let index = start;
-  window.move = (direction) => {
-    console.log("Move ", direction);
-    const moveClass = "move-" + direction;
 
-    let nextIndex = index;
-    if (direction === "left" && index < cards.length - 1) {
+(function () {
+  console.log("Start");
+  const cards = document.querySelectorAll(".card");
+  console.log(cards);
+  let index = 2;
+  let nextIndex = null;
+  cards[index].classList.add("active");
+  for (let i = 0; i < index; i++) {
+    cards[i].classList.add("hideLeft");
+  }
+  window.slide = (direction) => {
+    console.log("slide", direction);
+
+    if (index < cards.length - 1 && direction === "left") {
       nextIndex = index + 1;
-      cards[index].classList.add("move-left");
-    } else if (direction === "right" && index > 0) {
+    } else if (index > 0 && direction === "right") {
       nextIndex = index - 1;
-      cards[nextIndex].classList.remove("hide-at-left");
-      cards[nextIndex].classList.add("move-right");
     } else {
+      console.log("Out of bounds.");
       return;
     }
-    cards[nextIndex].classList.add("active");
-    cards[index].classList.remove("active");
+    cards[nextIndex].classList.add("nextActive");
+    cards[index].classList.add("sliding-" + direction);
+    cards[nextIndex].classList.add("sliding-" + direction);
 
-    setTimeout(() => {
-      cards[nextIndex].classList.remove(moveClass);
-      cards[index].classList.remove(moveClass);
+    window.setTimeout(() => {
       if (direction === "left") {
-        cards[index].classList.add("hide-at-left");
-      } else {
+        cards[index].classList.add("hideLeft");
+      } else if (direction === "right") {
+        cards[nextIndex].classList.remove("hideLeft");
       }
+
+      cards[index].classList.remove("sliding-" + direction);
+      cards[nextIndex].classList.remove("sliding-" + direction);
+
+      cards[nextIndex].classList.remove("nextActive");
+      cards[nextIndex].classList.add("active");
+
+      cards[index].classList.remove("active");
+
       index = nextIndex;
     }, 1000);
   };

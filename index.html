@@ -4,51 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Slider</title>
   </head>
   <body>
-    <div class="container">
-      <button class="left" onClick="move('right')">
-        &lt;
-      </button>
+    <main>
+      <section class="slider">
+        <div class="arrow">
+          <button onclick="slide('right')">&lt;</button>
+        </div>
 
-      <div class="cards" data-start="2">
-        <div class="card active">
-          <div class="card-head">Robert 0</div>
-          <div class="card-body">
-            C'était top. C'était top.C'était top.C'était top.C'était top.C'était
-            top. C'était top.C'était top.
+        <section class="cards">
+          <div class="card">
+            <div class="card-head">Roger R. 0</div>
+            <div class="card-body">
+              Ceci est un avis. C'était top. Ceci est un avis. C'était top. Ceci
+              est un avis. C'était top. Ceci est un avis. C'était top. Ceci est
+              un avis. C'était top.
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-head">Robert 1</div>
-          <div class="card-body">
-            C'était top. C'était top.C'était top. C'était top.C'était top.
-            C'était top.C'était top.C'était top.
+          <div class="card">
+            <div class="card-head">Roger R. 1</div>
+            <div class="card-body">
+              Ceci est un avis. C'était top. Ceci est un avis. C'était top. Ceci
+              est un avis. C'était top. Ceci est un avis. C'était top. Ceci est
+              un avis. C'était top.
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-head">Robert2</div>
-          <div class="card-body">
-            C'était top.C'était top.C'était top.C'était top.C'était top.C'était
-            top.C'était top.C'était top.
+          <div class="card">
+            <div class="card-head">Roger R. 2</div>
+            <div class="card-body">
+              Ceci est un avis. C'était top. Ceci est un avis. C'était top. Ceci
+              est un avis. C'était top. Ceci est un avis. C'était top. Ceci est
+              un avis. C'était top. Ceci est un avis. C'était top. Ceci est un
+              avis. C'était top. Ceci est un avis. C'était top. Ceci est un
+              avis. C'était top. Ceci est un avis. C'était top. Ceci est un
+              avis. C'était top. Ceci est un avis. C'était top. Ceci est un
+              avis. C'était top. Ceci est un avis. C'était top. Ceci est un
+              avis. C'était top. Ceci est un avis. C'était top. Ceci est un
+              avis. C'était top. Ceci est un avis. C'était top. Ceci est un
+              avis. C'était top. Ceci est un avis. C'était top.
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-head">Robert3</div>
-          <div class="card-body">
-            C'était top.C'était top.C'était top.C'était top.C'était top.C'était
-            top.C'était top.C'était top. C'était top.C'était top.C'était
-            top.C'était top.C'était top.C'était top.C'était top.C'était top.
-            C'était top.C'était top.C'était top.C'était top.C'était top.C'était
-            top.C'était top.C'était top. C'était top.C'était top.C'était
-            top.C'était top.C'était top.C'était top.C'était top.C'était top.
+          <div class="card">
+            <div class="card-head">Roger R. 3</div>
+            <div class="card-body">
+              Ceci est un avis. C'était top. Ceci est un avis. C'était top. Ceci
+              est un avis. C'était top. Ceci est un avis. C'était top. Ceci est
+              un avis. C'était top.
+            </div>
           </div>
+          <div class="card">
+            <div class="card-head">Roger R. 4</div>
+            <div class="card-body">
+              Ceci est un avis. C'était top. Ceci est un avis. C'était top. Ceci
+              est un avis. C'était top. Ceci est un avis. C'était top. Ceci est
+              un avis. C'était top.
+            </div>
+          </div>
+        </section>
+        <div class="arrow">
+          <button onClick="slide('left')">&gt;</button>
         </div>
-      </div>
-
-      <button class="right" onClick="move('left')">&gt;</button>
-    </div>
+      </section>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>

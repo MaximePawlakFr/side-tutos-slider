@@ -1,65 +1,47 @@
-.container {
-  background-color: #ddd;
-  display: flex;
-  justify-content: space-between;
+.slider {
+  display: inline-flex;
+  text-align: center;
+}
+.arrow {
+  display: inline-flex;
 }
 
 .cards {
   white-space: nowrap;
+  display: inline-block;
+  width: 80%;
   overflow: hidden;
-  text-align: center;
-  width: 100%;
-  padding: 1rem;
-  /* Inline blocks adds space between elements */
   font-size: 0;
 }
 
 .card {
-  font-size: 1rem;
-  display: inline-block;
-  /* display: none; */
-  white-space: normal;
-  overflow: hidden;
-  text-align: center;
+  /* border: 1px solid black; */
   /* padding: 1rem; */
+  display: inline-block;
+  white-space: normal;
   width: 100%;
-  height: 100%;
-}
-.card.active {
-  display: inline-block;
+  vertical-align: top;
+  font-size: 1rem;
 }
 
-.cards .card.hide-at-left:first-child::before {
-  margin-left: -1rem;
+.card.active.sliding-left {
+  animation: 1s slideToLeft 0s 1 normal;
 }
-.hide-at-left {
-  display: inline-block;
+
+.card.nextActive.sliding-right.hideLeft {
+  animation: 1s slideToLeft 0s 1 reverse;
+}
+
+.hideLeft {
   margin-left: -100%;
-  /* transform: translate(-50%); */
 }
 
-.hide-left {
-  /* display: inline-block; */
-  /* transform: translate(100%); */
-}
-
-.card.move-left {
-  display: inline-block;
-  animation: 1s moveRightToLeft 0s 1 normal;
-}
-
-.card.move-right {
-  display: inline-block;
-  animation: 1s moveRightToLeft 0s 1 reverse;
-}
-
-@keyframes moveRightToLeft {
+@keyframes slideToLeft {
   from {
-    margin-left: (0);
-    /* transform: translateX(-100%); */
+    margin-left: 0;
   }
+
   to {
     margin-left: -100%;
-    /* transform: translateX(0); */
   }
 }
