@@ -11,14 +11,16 @@
   display: inline-block;
   width: 80%;
   overflow: hidden;
+
+  /* This trick is to hide spaces between inline elements. */
   font-size: 0;
 }
 
 .card {
-  /* border: 1px solid black; */
-  /* padding: 1rem; */
   display: inline-block;
   white-space: normal;
+
+  /* The width must be set accordingly to the margin-left.  */
   width: 100%;
   vertical-align: top;
   font-size: 1rem;
